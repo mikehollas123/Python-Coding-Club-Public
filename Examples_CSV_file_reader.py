@@ -127,6 +127,31 @@ def csv_to_dict(file_location, first_row_is_header=True):  # creates the funtion
     return csv_dict  # this returns the dictionary as the output of the function
 
 
+def csv_to_list_of_lists(file_location, first_row_is_header=True):  # creates the funtion
+
+    with open(file_location,
+              "r") as file:  # opens the file and creates a file object (don't worry if you don't understand objects yet)
+        data = file.read()  # reads the whole file into memory as a single long string
+
+        List_data = [] # define/create our output list
+
+        # lets split the string by each line in the file
+        lines = data.split(
+            "\n")  # sometimes need \n\r  ! varies from csv to csv. How can we account for this? (hint: regex)
+
+        if first_row_is_header == True:  # if selected skip first line
+            for i in range(1,len(lines)):
+                line = lines[i].split(",")
+                List_data.append(line)
+        else:
+            for i in range(len(lines)):
+                line = lines[i].split(",")
+                List_data.append(line)
+
+    return List_data
+
+
+
 if __name__ == "__main__":  # don't worry about this - all this means is that the code inside this won't run unless this page is being run (which is kinda confusing right now - so don't worry)
 
     """
@@ -151,3 +176,12 @@ if __name__ == "__main__":  # don't worry about this - all this means is that th
     for key in dict_output:
         print(key)
         print(dict_output[key])
+
+
+    list_method = csv_to_list_of_lists("C:\Data\\test.csv", True)
+
+    for i in range(len(list_method)):
+        print(list_method[i])
+
+
+    print(list_method[0][2])
