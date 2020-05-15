@@ -13,7 +13,12 @@ def simpleAddition(a,b):
     return a + b # will return this value to be the output of the function - don't need to have a return
 
 
+def print_hello():
+    print("hello")
 
+
+
+simpleAddition(4,5)
 
 
 print(simpleAddition(1,2))
@@ -43,6 +48,9 @@ default values!
 def my_function(firstname = "john",lastname="smith"):
     print("{0} {1}".format(firstname,lastname))
 
+
+my_function("mmike","hollas")
+
 my_function()
 
 
@@ -64,7 +72,7 @@ def simplemultiplaction(a,b):
 first need to import the function
 """
 
-from Examples_CSV_file_reader import csv_to_dict as cd
+from Examples_CSV_file_reader import csv_to_dict
 
 # or
 

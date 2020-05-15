@@ -25,6 +25,7 @@ creates a function that can be called elsewhere. The input variables are contain
     Default values can be defined by defining the value of the variable (i.e. first_row_is_header=True). If no variable
     is given by the user, these values will be used.
 """
+import re
 
 
 def csv_to_dict(file_location, first_row_is_header=True):  # creates the funtion
@@ -185,3 +186,5 @@ if __name__ == "__main__":  # don't worry about this - all this means is that th
 
 
     print(list_method[0][2])
+
+
